@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    
+    margin: 15px;
+    padding: 0;
+    
+    background: #222;
+    color: whitesmoke;
+    
+    #root{
+        img{
+            max-width: 100%;
+        }
+
+        #two{
+
+            margin: 15px 0;
+            
+            h1{
+                font-weight: 900;
+                margin: 0;
+                padding: 0;
+            }
+
+            p{
+                font-weight: 300;
+                margin: 0;
+                padding: 0;
+            }
+
+            h6{
+                font-weight: 300;
+                margin: 40px 0;
+                padding: 0;
+            }
+
+            a{
+                color: whitesmoke;
+                font-weight: 300;
+            }
+        }
+    }
+}
