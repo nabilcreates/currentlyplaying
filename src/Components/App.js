@@ -57,6 +57,9 @@ export default class App extends React.Component{
             }
         })
         .then(d => {
+
+            console.log(d)
+            
             let data = {
                 title: d.item.name,
                 artist: d.item.artists,
@@ -64,28 +67,17 @@ export default class App extends React.Component{
                 id: d.item.id,
                 uri: d.item.uri,
                 album_id: d.item.album.id,
+                album_release_date: d.item.album.release_date,
+                image: d.item.album.images[0].url,
+                popularity: d.item.popularity,
+                preview_url: d.item.preview_url,
             }
 
             this.setState(data)
-            this.getPicture(this.state.album_id, token)
             console.log(data)
         })
     }
 
-    getPicture(id, token){
-            fetch(`https://api.spotify.com/v1/albums/${id}`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            .then(r => r.json())
-            .then(d => {
-                this.setState({
-                    image: d.images[0].url
-                })
-            })
-    }
-    
     render(){
         console.log(this.state)
         return(
@@ -100,11 +92,28 @@ export default class App extends React.Component{
 
                         <div id='text' >
                             <h1>{this.state.title}</h1>
-                            <p>By: {this.state.artist[0].name}</p>
+                            <p>
+                                <i class="fa fa-user" aria-hidden="true"></i> {this.state.artist[0].name}
+                            </p>
 
-                            <a id='button' href={`https://open.spotify.com/track/${this.state.id}`} >
-                                <i class="fa fa-spotify" aria-hidden="true"></i> Open In Spotify
-                            </a>
+                            <p>
+                                <i class="fa fa-heart" aria-hidden="true"></i> {this.state.popularity}
+                            </p>
+
+                            <br></br>
+                            
+                            <p>Album Released On: {new Date(this.state.album_release_date).toDateString()}</p>
+
+
+                            <div id='buttons'>
+                                <a id='button-spotify' href={`https://open.spotify.com/track/${this.state.id}`} >
+                                    <i class="fa fa-spotify" aria-hidden="true"></i> Open In Spotify
+                                </a>
+
+                                <a id='button-preview' href={this.state.preview_url} >
+                                    <i class="fa fa-headphones" aria-hidden="true"></i> Preview Song
+                                </a>
+                            </div>
 
                             <Footer />
                         </div>

@@ -46,11 +46,27 @@ body{
             font-weight: 300;
         }
 
-        #button{
+        #buttons{
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-gap: 5px;
+        }
+        
+        #button-spotify{
             display: block;
             margin: 20px 0;
             padding: 10px 15px;
             background: #1ED761;
+            border: 0;
+            text-decoration: none;
+            color: $background;
+        }
+
+        #button-preview{
+            display: block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background: #C3073F;
             border: 0;
             text-decoration: none;
             color: $background;
