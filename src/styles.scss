@@ -3,6 +3,7 @@
 $background: #141414;
 
 body{
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     margin: 20px;
     padding: 0;
@@ -34,7 +35,6 @@ body{
         margin: 15px 0;
         
         h1{
-            text-align: center;
             margin: 5px 0;
         }
 
@@ -47,10 +47,14 @@ body{
             font-weight: 300;
         }
 
+        #artist{
+            color: darken(whitesmoke, 60%);
+        }
+
         #stats{
             text-align: center;
             display: grid;
-            grid-template-columns: repeat(3, 33.333%);
+            grid-template-columns: repeat(3, 33.3333%);
         }
 
         // #buttons{

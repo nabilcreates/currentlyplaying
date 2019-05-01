@@ -71,6 +71,7 @@ export default class App extends React.Component{
                 image: d.item.album.images[0].url,
                 popularity: d.item.popularity,
                 preview_url: d.item.preview_url,
+                song_duration_mins: Math.round(d.item.duration_ms / 60000)
             }
 
             this.setState(data)
@@ -92,30 +93,35 @@ export default class App extends React.Component{
 
                         <div id='text' >
                             <h1>{this.state.title}</h1>
+
+                            <p id='artist' >
+                                {this.state.artist[0].name}
+                            </p>
+
                             
                             <div id='stats'>
-                                <p>
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-
-                                    <br></br>
-                                    
-                                    {this.state.artist[0].name}
-                                </p>
-
                                 <p>
                                     <i class="fa fa-heart" aria-hidden="true"></i>
 
                                     <br></br>
                                     
-                                    {this.state.popularity}
+                                    <span id='stats-text' >{this.state.popularity}</span>
                                 </p>
                                 
+                                <p>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+
+                                    <br></br>
+                                    
+                                    <span id='stats-text' >{`${new Date(this.state.album_release_date).getDate()}/${new Date(this.state.album_release_date).getMonth() + 1}/${new Date(this.state.album_release_date).getFullYear()}`}</span>
+                                </p>
+
                                 <p>
                                     <i class="fa fa-clock-o" aria-hidden="true"></i>
 
                                     <br></br>
                                     
-                                    {`${new Date(this.state.album_release_date).getDate()}/${new Date(this.state.album_release_date).getMonth() + 1}/${new Date(this.state.album_release_date).getFullYear()}`}
+                                    <span id='stats-text' >{`${this.state.song_duration_mins} Min(s)`}</span>
                                 </p>
                             </div>
 
