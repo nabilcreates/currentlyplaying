@@ -113,7 +113,8 @@ export default class App extends React.Component{
                 // Everything is not loaded OR Is not listening to any song
                 <div>
                     <h1>Hello!</h1>
-                    <p>Unfortunately, I am not listening to any song! Check back later!</p>
+                    <h3>It's loading, just hold on for awhile</h3>
+                    <p>But if it's taking too long... then, I am not listening to any song! Check back later!</p>
 
                     <Footer />
                 </div>
