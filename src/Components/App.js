@@ -92,17 +92,32 @@ export default class App extends React.Component{
 
                         <div id='text' >
                             <h1>{this.state.title}</h1>
-                            <p>
-                                <i class="fa fa-user" aria-hidden="true"></i> {this.state.artist[0].name}
-                            </p>
-
-                            <p>
-                                <i class="fa fa-heart" aria-hidden="true"></i> {this.state.popularity}
-                            </p>
-
-                            <br></br>
                             
-                            <p>Album Released On: {new Date(this.state.album_release_date).toDateString()}</p>
+                            <div id='stats'>
+                                <p>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+
+                                    <br></br>
+                                    
+                                    {this.state.artist[0].name}
+                                </p>
+
+                                <p>
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+
+                                    <br></br>
+                                    
+                                    {this.state.popularity}
+                                </p>
+                                
+                                <p>
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+
+                                    <br></br>
+                                    
+                                    {`${new Date(this.state.album_release_date).getDate()}/${new Date(this.state.album_release_date).getMonth() + 1}/${new Date(this.state.album_release_date).getFullYear()}`}
+                                </p>
+                            </div>
 
 
                             <div id='buttons'>
@@ -110,9 +125,9 @@ export default class App extends React.Component{
                                     <i class="fa fa-spotify" aria-hidden="true"></i> Open In Spotify
                                 </a>
 
-                                <a id='button-preview' href={this.state.preview_url} >
+                                {/* <a id='button-preview' href={this.state.preview_url} >
                                     <i class="fa fa-headphones" aria-hidden="true"></i> Preview Song
-                                </a>
+                                </a> */}
                             </div>
 
                             <Footer />

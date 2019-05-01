@@ -34,6 +34,7 @@ body{
         margin: 15px 0;
         
         h1{
+            text-align: center;
             margin: 5px 0;
         }
 
@@ -46,11 +47,17 @@ body{
             font-weight: 300;
         }
 
-        #buttons{
+        #stats{
+            text-align: center;
             display: grid;
-            grid-template-columns: repeat(2, 50%);
-            grid-gap: 5px;
+            grid-template-columns: repeat(3, 33.333%);
         }
+
+        // #buttons{
+        //     display: grid;
+        //     grid-template-columns: repeat(2, 50%);
+        //     grid-gap: 5px;
+        // }
         
         #button-spotify{
             display: block;
