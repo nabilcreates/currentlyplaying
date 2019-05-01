@@ -1,46 +1,56 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700,900');
+
+$background: #141414;
 
 body{
-
     font-family: 'Roboto', sans-serif;
-    
-    margin: 15px;
+    margin: 20px;
     padding: 0;
-    
-    background: #222;
+
+    background: $background;
     color: whitesmoke;
+
+    img{
+        max-width: 100%;
+    }
     
-    #root{
-        img{
-            max-width: 100%;
+    h1{
+        font-weight: 900;
+    }
+
+    p{
+        font-weight: 300;
+    }
+
+    a{
+        color: white;
+    }
+
+    #text{
+        margin: 15px 0;
+        
+        h1{
+            margin: 5px 0;
         }
 
-        #two{
-
-            margin: 15px 0;
-            
-            h1{
-                font-weight: 900;
-                margin: 0;
-                padding: 0;
-            }
-
-            p{
-                font-weight: 300;
-                margin: 0;
-                padding: 0;
-            }
-
-            h6{
-                font-weight: 300;
-                margin: 40px 0;
-                padding: 0;
-            }
-
-            a{
-                color: whitesmoke;
-                font-weight: 300;
-            }
+        p{
+            margin: 5px 0;
         }
+
+        h6{
+            margin: 30px 0;
+            font-weight: 300;
+        }
+
+        #button{
+            display: block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background: #1ED761;
+            border: 0;
+            text-decoration: none;
+            color: $background;
+        }
+
     }
 }
