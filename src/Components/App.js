@@ -13,7 +13,8 @@ export default class App extends React.Component{
             error: true,
             id: 'none',
             uri: 'none',
-            image: 'none'
+            image: 'none',
+            app_version: '1.01'
         }
 
         this.getToken()
@@ -136,7 +137,7 @@ export default class App extends React.Component{
                                 </a> */}
                             </div>
 
-                            <Footer />
+                            <Footer app_version={this.state.app_version} />
                         </div>
                     </div>
                 :
@@ -146,7 +147,7 @@ export default class App extends React.Component{
                     <h3>It's loading, just hold on for awhile</h3>
                     <p>But if it's taking too long... then, I am not listening to any song! Check back later!</p>
 
-                    <Footer />
+                    <Footer app_version={this.state.app_version} />
                 </div>
             }
                 

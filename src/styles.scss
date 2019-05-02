@@ -12,7 +12,7 @@ body{
     color: whitesmoke;
 
     img{
-        max-width: 100%;
+        max-width: 90%;
     }
     
     h1{
@@ -48,6 +48,7 @@ body{
         }
 
         #artist{
+            margin: 10px 0;
             color: darken(whitesmoke, 60%);
         }
 
@@ -65,7 +66,7 @@ body{
         
         #button-spotify{
             display: block;
-            margin: 20px 0;
+            margin: 10px 0;
             padding: 10px 15px;
             background: #1ED761;
             border: 0;
